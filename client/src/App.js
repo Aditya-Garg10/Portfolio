@@ -15,7 +15,7 @@ import GetInTouch from './pages/Home/GetInTouch';
 
 
 
-export const HOST = "http://localhost:8001"
+export const HOST = "https://portfolio-w0sm.onrender.com"
 
 const App = () => {
 
