@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+.Github:hover{
+    background-color: white;
+    border: 0;
+    color: black;
+}
+
+
+
+
+
+::-webkit-scrollbar{
+    width: 10px;    
+    background-color: grey;
+    scroll-behavior: smooth;
+    
+}
+
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(222, 221, 221);
+    border-radius: 20px;
+    scroll-behavior: smooth;
+    
+}
+
+.lottie{
+    z-index: auto;
+}
+
+.adminInput{
+    height: 40px;
+    border: 1px solid gray;
+    width: 100%;
+    border-radius: 0%;
+    padding-left: 20px;
+}
+
+.adminInput:focus{
+    outline: none;
+    border: 2px solid gray;
+    
+}
+
+.contact-text{        
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.parent:hover .child{
+    color: #3b82f6 ;
+}
+
+@keyframes marquee {
+    100%{
+        transform: translateX(-50%);
+    }
+}
