@@ -18,21 +18,25 @@ const About = () => {
    useLayoutEffect : useEffect;
    
   useIsomorphicLayoutEffect(()=>{
-    let ctx = gsap.context(()=>{},textRef);
-    let tl7 = gsap.timeline({
-          scrollTrigger:{
-            trigger:textRef.current,            
-            // start:"top 10%",
-            end:"50%",                  
-            pin:true,                               
-          }})          
-          tl7.from(".trigger ",{opacity:0,duration:0.2})
-          tl7.from(".text",{opacity:0,y:-10}).fromTo(".text2",{opacity:0,y:-10},{opacity:1})
-          tl7.fromTo(".marquee",{opacity:0},{opacity:1,ease:"power4.in"})
-    return () => ctx.revert()
+    let ctx = gsap.context(()=>{
+      let tl7 = gsap.timeline({
+        scrollTrigger:{
+          trigger:textRef.current,            
+          // start:"top 10%",
+          end:"50%",                  
+          pin:true,                               
+        }})          
+        tl7.from(".trigger ",{opacity:0,duration:0.2})
+        tl7.from(".text",{opacity:0,y:-10}).fromTo(".text2",{opacity:0,y:-10},{opacity:1})
+        tl7.fromTo(".marquee",{opacity:0},{opacity:1,ease:"power4.in"})
+      },textRef);
+      return () => ctx.revert()
+    
   },[])
   
-  
+  ScrollTrigger.defaults({
+    markers:true
+  })
   return (
     <div ref={textRef}>
       <SectionTitle title="About" />
