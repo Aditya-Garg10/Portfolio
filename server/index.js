@@ -63,7 +63,7 @@ app.use("/api/admin",userRoute)
 
 
 //connection
-connectMongoDb("mongodb://localhost:27017/portfolio").then(()=>{
+connectMongoDb(process.env.MONGO_URL).then(()=>{
     console.log("MongoDB Connected")
 })
 
