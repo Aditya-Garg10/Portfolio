@@ -16,8 +16,7 @@ app.use(
     cors({
       origin: [
         "http://localhost:3000",
-        "http://192.168.0.108:3000",
-        "https://portfolio-aditya-gargs-projects-f431692c.vercel.app",
+        "http://192.168.0.108:3000",        
       ],
       methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
       credentials: true,
@@ -29,9 +28,7 @@ app.use(
 
   const allowedOrigins = [  
     "http://localhost:3001",
-    "http://192.168.0.108:3000",
-    "https://portfolio-aditya-gargs-projects-f431692c.vercel.app"
-    
+    "http://192.168.0.108:3000",        
   ];
   
   app.use((req, res, next) => {
