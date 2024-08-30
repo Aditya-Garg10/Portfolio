@@ -69,11 +69,11 @@ const Header = (props) => {
             <button onClick={handletoggle} className='text-tertiary toggle-btn md:hidden lg:hidden 2xl:hidden sm:block'><FaBars/></button>
     </div>
     {isOpen?
-      <div className={`bg-quaternary absolute  h-[5vh] px-5 w-full flex-2 flex items-center justify-center`}>
+      <div className={`bg-[#27272A]  absolute  h-[5vh] px-5 w-full flex-2 flex items-center justify-center`}>
         <div className="flex sm:flex sm:text-xs pr-5 py-14 flex-row items-center text-1xl gap-12">
-            <button className='text-tertiary'>About me</button>
-            <button className='text-tertiary'>Resume</button>
-            <button className=' font-semibold sm:p-1  sm:rounded-none p-2 pr-3 pl-3 hover:bg-fifth bg-[#27272A] text-black rounded-full'>Get in touch!</button>
+            <button onClick={handleAbout} className='text-tertiary hover:bg-[#454548]'>{"About me"}</button>
+            <button onClick={handleResume} className='text-tertiary hover:bg-[#454548]'>{"Resume"}</button>
+            <button className=' font-semibold sm:p-1  sm:rounded-none p-2 pr-3 pl-3 hover:bg-fifth bg-[#27272A] text-black rounded-full'  onClick={props.btnCon ? handleClick : handleHomeClick}> {props.btnCon || "Get in touch!" }</button>
         </div>
       </div>
       :<></>}
