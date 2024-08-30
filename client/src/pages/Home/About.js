@@ -6,16 +6,18 @@ import Photo from '../../assets/myPhoto.jpg'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger);
 const About = () => {
-  const textRef = useRef()
+  const textRef = useRef(null)
 
   const {portfolioData} = useSelector((state)=> state.root)
   const {about} = portfolioData
   const {skills,lottieURL,description1,description2} = about
 
   
+   const useIsomorphicLayoutEffect = 
+   typeof window !== "undefined"?
+   useLayoutEffect : useEffect;
    
-   
-  useLayoutEffect(()=>{
+  useIsomorphicLayoutEffect(()=>{
     let ctx = gsap.context(()=>{},textRef);
     let tl7 = gsap.timeline({
           scrollTrigger:{
@@ -28,7 +30,7 @@ const About = () => {
           tl7.from(".text",{opacity:0,y:-10}).fromTo(".text2",{opacity:0,y:-10},{opacity:1})
           tl7.fromTo(".marquee",{opacity:0},{opacity:1,ease:"power4.in"})
     return () => ctx.revert()
-  })
+  },[])
   
   
   return (
