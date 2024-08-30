@@ -18,6 +18,7 @@ app.use(
         "http://localhost:3000",
         "http://localhost:5173",
         "http://192.168.0.108:3000"
+        "https://portfolio-aditya-gargs-projects-f431692c.vercel.app"
         
       ],
       methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
@@ -32,6 +33,7 @@ app.use(
     "http://localhost:3001",
     "http://localhost:5173",
     "http://192.168.0.108:3000"
+    "https://portfolio-aditya-gargs-projects-f431692c.vercel.app"
     
   ];
   
