@@ -17,7 +17,7 @@ const About = () => {
    typeof window !== "undefined"?
    useLayoutEffect : useEffect;
    
-  useIsomorphicLayoutEffect(()=>{
+  useEffect(()=>{
     let ctx = gsap.context(()=>{
       let tl7 = gsap.timeline({
         scrollTrigger:{
