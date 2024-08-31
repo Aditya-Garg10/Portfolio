@@ -16,10 +16,10 @@ app.use(
     cors({
       origin: [
         "http://localhost:3000",
-
         "http://localhost:5173",
         "http://192.168.0.108:3000",
-        "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app"
+        "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app",
+        "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app/admin/login"
 
       ],
       methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
@@ -32,10 +32,10 @@ app.use(
 
   const allowedOrigins = [  
     "http://localhost:3001",
-
     "http://localhost:5173",
     "http://192.168.0.108:3000",
-    "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app"
+    "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app",
+    "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app/admin/login"
   
   ];
   
