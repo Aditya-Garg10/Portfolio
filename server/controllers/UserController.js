@@ -29,7 +29,7 @@ const adminLogin =(async(req,res)=>{
   
         const authtoken = jwt.sign(data, 'secrem_admin1');
         success = true;
-        res.status(200).json({ success, authtoken })
+        res.status(200).send({ success, authtoken })
     } catch (error) {
       res.status(500).send("Internal Server Error")
     }
