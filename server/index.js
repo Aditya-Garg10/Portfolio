@@ -6,6 +6,7 @@ const portfolioRoute = require("./routes/PortfolioRoute")
 const userRoute = require("./routes/UserRoute")
 const cors = require("cors")
 const bodyParser = require("body-parser")
+const Admin = require("./models/UserModel")
 dotenv.config()
 
 
