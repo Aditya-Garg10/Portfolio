@@ -20,7 +20,7 @@ const Admin = () => {
 
   useEffect(()=>{      
     if(!localStorage.getItem("auth-token")){
-      navigate("/admin/login")
+      navigate("/login")
     }    
     // eslint-disable-next-line
   })
