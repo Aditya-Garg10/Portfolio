@@ -19,7 +19,7 @@ const handleChange = (e) => {
 
 const handleSubmit = async() =>{
   try {
-    const reponse = await fetch(`${HOST}/send-email`,{
+    const reponse = await fetch(`${HOST}/api/admin/send-email`,{
       method: "POST",
     headers:{
       "Accept" : "*",
