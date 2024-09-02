@@ -21,6 +21,7 @@ const handleSubmit = async() =>{
   try {
     const reponse = await fetch(`${HOST}/api/admin/send-email`,{ method: "POST",
     headers:{
+      "Accept" : "*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(formData)})
@@ -31,7 +32,7 @@ const handleSubmit = async() =>{
       message.success("Email Sent Successfully")
     }
   } catch (error) {
-    message.error(error.message)
+    message.error(error)
   }
 }
   const [openResume, setOpenResume] = useState(false);
