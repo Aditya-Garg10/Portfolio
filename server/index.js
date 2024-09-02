@@ -8,6 +8,8 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const Admin = require("./models/UserModel")
 dotenv.config()
+const jwt = require("jsonwebtoken")
+const nodemailer = require("nodemailer")
 
 
 const app = express()
@@ -55,7 +57,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post("/admin/login",async(req,res)=>{
+app.post("/api/admin",async(req,res)=>{
   try {
     const {email,password} = req.body;
     let user = await Admin.findOne({email});
@@ -78,12 +80,54 @@ app.post("/admin/login",async(req,res)=>{
 
       const authtoken = jwt.sign(data, 'secrem_admin1');
       success = true;        
-      res.status(204).json({ success, authtoken })
+      res.status(200).json({ success, authtoken })
   } catch (error) {
     console.log(error)
     res.status(500).json("Internal Server Error")
   }
 })
+
+
+app.post("/api/admin/send-email",async(req, res) => {
+  try {
+    
+  const {  email, message } = req.body;
+  console.log(req.body)
+  // Create a transporter object using SMTP transport
+  const transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+          user: process.env.email, // Replace with your email
+          pass: process.env.Password,  // Replace with your email password
+      },
+  });
+
+  console.log(process.env.email)
+  // Mail options
+  const mailOptions = {
+      from: email,
+      to: "gargaditya880@gmail.com", // Replace with recipient's email
+      subject: `Message from ${email} from Portfolio`,
+      text: message,
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          // return res.status(500).json({ error: 'Failed to send email' });
+          console.log(error)
+      }
+      else{
+        console.log(info.response)
+        res.status(200).json({ success: 'Email sent successfully' });
+      }
+  });
+  } catch (error) {
+    console.log(error)
+  }
+});
+
+
 
 // app.use("/admin",userRoute)
 app.use("/api/portfolio",portfolioRoute)
