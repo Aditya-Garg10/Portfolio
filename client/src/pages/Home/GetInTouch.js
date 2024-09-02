@@ -19,7 +19,8 @@ const handleChange = (e) => {
 
 const handleSubmit = async() =>{
   try {
-    const reponse = await fetch(`${HOST}/api/admin/send-email`,{ method: "POST",
+    const reponse = await fetch(`${HOST}/send-email`,{
+      method: "POST",
     headers:{
       "Accept" : "*",
       "Content-Type": "application/json",
