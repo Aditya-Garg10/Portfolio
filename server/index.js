@@ -10,16 +10,15 @@ dotenv.config()
 
 
 const app = express()
-
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 app.use(
     cors({
       origin: [
-        "http://localhost:3000",
-        "http://localhost:5173",        
         "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app",
-        
-
+        "http://localhost:5173",        
+        "http://localhost:3000"        
       ],
       methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
       credentials: true,
@@ -54,11 +53,11 @@ app.get("/",(req,res)=>{
    
 })
 
-app.use(express.json())
+
 
 
 app.use("/api/portfolio",portfolioRoute)
-app.use("/api",userRoute)
+app.use("/api/admin",portfolioRoute)
 
 
 //connection

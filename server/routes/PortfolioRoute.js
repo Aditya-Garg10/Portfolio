@@ -1,5 +1,6 @@
 const express = require("express")
 const { getData,updateIntro,updateAbout,addProject, updateProject, deleteProject, updateContact } = require("../controllers/PortfolioController")
+const { adminLogin, Sendemail } = require("../controllers/UserController")
 
 
 const router = express.Router()
@@ -11,5 +12,7 @@ router.post("/addProject",addProject)
 router.put("/updateProject",updateProject)
 router.put("/updateContact",updateContact)
 router.delete("/deleteProject/:id",deleteProject)
+router.post("/admin",adminLogin)
+router.post("/send-email",Sendemail)
 
 module.exports = router
