@@ -57,7 +57,7 @@ app.get("/",(req,res)=>{
 
 
 app.use("/api/portfolio",portfolioRoute)
-app.use("/api/admin",portfolioRoute)
+app.use("/",userRoute)
 
 
 //connection

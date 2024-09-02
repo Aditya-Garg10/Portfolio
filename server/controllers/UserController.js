@@ -78,4 +78,4 @@ const Sendemail = (async(req, res) => {
 
 
 
-  module.exports = {adminLogin,Sendemail}
+ module.exports = {adminLogin,Sendemail}
