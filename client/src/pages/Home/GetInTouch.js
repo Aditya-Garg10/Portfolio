@@ -5,10 +5,13 @@ import { IoCloseSharp } from 'react-icons/io5'
 import { IoMdArrowRoundDown } from 'react-icons/io'
 import { FaUserLarge } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-import {HOST} from '../../App'
+
 import { message } from 'antd'
 
+
 const GetInTouch = () => {
+
+  const HOST = "https://portfolio-w0sm.onrender.com"
   const [formData, setFormData] = useState({    
     email: '',
     message: '',
@@ -22,7 +25,7 @@ const handleSubmit = async() =>{
     const reponse = await fetch(`${HOST}/admin/send-email`,{
       method: "POST",
     headers:{
-      "Accept" : "*",
+      "Accept" : "*/*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(formData)})
