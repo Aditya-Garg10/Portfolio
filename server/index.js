@@ -54,9 +54,37 @@ app.get("/",(req,res)=>{
 })
 
 
+app.post("/admin/login",async(req,res)=>{
+  try {
+    const {email,password} = req.body;
+    let user = await Admin.findOne({email});
+    if (!user) {
+      success = false
+      return res.status(400).json({ success, error: "Please try to login with correct credentials (email)" });
+    }   
+    
+    const passwordCompare = password === user.password
+    if(!passwordCompare){
+        success = false
+      return res.status(400).json({ success, error: "Please try to login with correct credentials (password)" });
+    }
 
+    const data = {
+        user: {
+          id: user.id
+        }
+      }
 
-app.use("/admin",userRoute)
+      const authtoken = jwt.sign(data, 'secrem_admin1');
+      success = true;        
+      res.status(204).json({ success, authtoken })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json("Internal Server Error")
+  }
+})
+
+// app.use("/admin",userRoute)
 app.use("/api/portfolio",portfolioRoute)
 
 
