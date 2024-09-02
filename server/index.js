@@ -57,7 +57,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post("/admin",async(req,res)=>{
+app.post("api/admin",async(req,res)=>{
   try {
     const {email,password} = req.body;
     let user = await Admin.findOne({email});
