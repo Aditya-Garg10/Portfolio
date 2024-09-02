@@ -12,7 +12,7 @@ router.post("/addProject",addProject)
 router.put("/updateProject",updateProject)
 router.put("/updateContact",updateContact)
 router.delete("/deleteProject/:id",deleteProject)
-router.post("/",adminLogin)
+router.post("/adminLogin",adminLogin)
 router.post("/send-email",Sendemail)
 
 module.exports = router
