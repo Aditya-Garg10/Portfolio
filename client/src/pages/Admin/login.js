@@ -35,7 +35,7 @@ const Login = () => {
     if(responseData.success){
       localStorage.setItem('auth-token',responseData.authtoken)
       message.success("LoggedIn Successfully")
-      navigate("/")      
+      navigate("/admin")      
     }
     else{
       message.error(responseData.error)
