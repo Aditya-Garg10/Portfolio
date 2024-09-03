@@ -89,7 +89,8 @@ app.post("/admin/send-email",async(req,res)=>{
       }
       else{
         console.log(info.response)
-        res.status(200).json({ success: 'Email sent successfully' });
+        const success = true;
+        res.status(200).json({ success, message: 'Email sent successfully' });
       }
   });
   } catch (error) {

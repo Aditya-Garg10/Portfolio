@@ -32,7 +32,7 @@ const handleSubmit = async() =>{
 
     const data = await reponse.json()
     console.log(data)
-    if(reponse.status === 200){
+    if(data.status === 200){
       message.success("Email Sent Successfully")
     }
   } catch (error) {
