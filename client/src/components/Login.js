@@ -24,7 +24,7 @@ const Login = () => {
   const handleLogin = async(e) =>{
     e.preventDefault();    
     const response = await fetch(`${HOST}/api/admin`,{
-      method: "GET",
+      method: "POST",
       headers:{
         Accept : '*/*',
         'Content-Type' : 'application/json',

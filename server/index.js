@@ -57,7 +57,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.get("/api/admin",async(req,res)=>{
+app.post("/api/admin",async(req,res)=>{
   try {
     const {email,password} = req.body;
     if(!req.body){
