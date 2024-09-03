@@ -5,7 +5,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import {useNavigate} from 'react-router-dom'
 
 
-const login = () => {
+const Login = () => {
 
   const [data, setdata] = useState({
     email : "",
@@ -79,4 +79,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
