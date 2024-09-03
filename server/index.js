@@ -21,7 +21,8 @@ app.use(
       origin: [
         "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app",
         "http://localhost:5173",        
-        "http://localhost:3000"        
+        "http://localhost:3000",  
+        "https://portfolio-nine-lac-78.vercel.app"      
       ],
       methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
       credentials: true,
@@ -34,7 +35,7 @@ app.use(
   const allowedOrigins = [  
     "http://localhost:3001",
     "http://localhost:5173",    
-    "https://portfolio-b5kt5v1o6-aditya-gargs-projects-f431692c.vercel.app",    
+    "https://portfolio-nine-lac-78.vercel.app",    
   
   ];
   
