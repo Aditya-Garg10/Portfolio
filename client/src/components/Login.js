@@ -24,7 +24,7 @@ const Login = () => {
   const handleLogin = async(e) =>{
     e.preventDefault();    
     const response = await fetch(`${HOST}/api/admin`,{
-      method: "PATCH",
+      method: "GET",
       headers:{
         Accept : 'application/json',
         'Content-Type' : 'application/json',
