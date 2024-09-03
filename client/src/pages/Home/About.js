@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, {  useLayoutEffect, useRef } from "react";
 import SectionTitle from "../../components/SectionTitle";
 import { useSelector } from "react-redux";
 import gsap from "gsap";
@@ -12,23 +12,19 @@ const About = () => {
   const {about} = portfolioData
   const {skills,lottieURL,description1,description2} = about
 
-  
-   const useIsomorphicLayoutEffect = 
-   typeof window !== "undefined"?
-   useLayoutEffect : useEffect;
    
-  useEffect(()=>{
+  useLayoutEffect(()=>{
     let ctx = gsap.context(()=>{
       let tl7 = gsap.timeline({
         scrollTrigger:{
           trigger:textRef.current,            
-          // start:"top 10%",
-          end:"50%",                  
+          start:"top 10%",
+          end:"bottom 50%",                  
           pin:true,                               
         }})          
-        tl7.from(".trigger ",{opacity:0,duration:0.2})
-        tl7.from(".text",{opacity:0,y:-10}).fromTo(".text2",{opacity:0,y:-10},{opacity:1})
-        tl7.fromTo(".marquee",{opacity:0},{opacity:1,ease:"power4.in"})
+        tl7.from(textRef.current,{opacity:0,duration:0.2})
+        tl7.from(textRef.current,{opacity:0,y:-10}).fromTo(".text2",{opacity:0,y:-10},{opacity:1})
+        tl7.fromTo(textRef.current,{opacity:0},{opacity:1,ease:"power4.in"})
       },textRef);
       return () => ctx.revert()
     
