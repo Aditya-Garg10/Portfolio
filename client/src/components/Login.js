@@ -23,7 +23,7 @@ const Login = () => {
 
   const handleLogin = async(e) =>{
     e.preventDefault();    
-    const response = await fetch(`${HOST}/api/admin`,{
+    const response = await fetch(`https://e-commerce-backend-ssjr.onrender.com/admin/login`,{
       method: "POST",
       headers:{
         Accept : '*/*',
