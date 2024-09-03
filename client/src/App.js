@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { HideLoading, ReloadData, ShowLoading, setPortfolioData } from './redux/rootSlice';
 import Admin from './pages/Admin';
 import GetInTouch from './pages/Home/GetInTouch';
-import Login from './pages/Admin/login';
+import Login from './pages/Admin/Login.js';
 
 
 
