@@ -29,6 +29,10 @@ const Admin = () => {
     console.log(key);
   };
 
+  const handleLogOut = ()  =>{
+    localStorage.removeItem("auth-token");
+  }
+
   const {portfolioData} = useSelector((state)=> state.root)
   const items = portfolioData &&  [
     {
@@ -58,7 +62,8 @@ const Admin = () => {
         <Header  btnCon={"Home"} />
         <div className="mt-5 p-5">
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
-        </div>        
+        </div>   
+         <button className='bg-red-500 px-3 py-1 text-white font-semibold ' onClick={handleLogOut}>LOGOUT</button>    
     </div>
   )
 }

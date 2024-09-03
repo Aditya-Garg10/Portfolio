@@ -94,7 +94,7 @@ const AdminProject = () => {
           Add Project
         </button>
       </div>
-      <div className="grid grid-cols-3 gap-5 mt-5">
+      <div className="grid grid-cols-3 sm:grid-cols-1 gap-5 mt-5">
         {project.map((proj) => (
           <div className="shadow border p-5 border-gray-400 gap-5 flex flex-col">
             <h1 className="text-primary text-xl mb-2 text-center font-bold">{proj.title}</h1>
