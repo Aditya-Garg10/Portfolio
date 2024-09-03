@@ -13,7 +13,7 @@ const Login = () => {
     password : ""
   });
 
-  console.log(data)
+  
 
   const navigate = useNavigate();
 
@@ -22,24 +22,27 @@ const Login = () => {
   }
 
   const handleLogin = async(e) =>{
-    e.preventDefault();
-    let responseData;
-    await fetch(`${HOST}/api/admin`,{
+    e.preventDefault();    
+    const response = await fetch(`${HOST}/api/admin`,{
       method: "POST",
       headers:{
         Accept : 'application/json',
         'Content-Type' : 'application/json',
       },
       body : JSON.stringify(data),
-    }).then((resp)=> resp.json()).then((data)=>responseData=data)
+    })
 
-    if(responseData.success){
-      localStorage.setItem('auth-token',responseData.authtoken)
+    const info = await response.json()
+    console.log(info)
+
+
+    if(info.success){
+      localStorage.setItem('auth-token',info.authtoken)
       message.success("LoggedIn Successfully")
       navigate("/admin")      
     }
     else{
-      message.error(responseData.error)
+      message.error(info.error)
     }
   }
   return (
