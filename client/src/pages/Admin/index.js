@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Header from '../../components/Header'
-import { Tabs } from "antd";
+import { Tabs, message } from "antd";
 import AdminIntro from './AdminIntro';
 import AdminAbout from './AdminAbout';
 import { useSelector } from 'react-redux';
@@ -31,6 +31,9 @@ const Admin = () => {
 
   const handleLogOut = ()  =>{
     localStorage.removeItem("auth-token");
+    navigate("/");
+    message.info("LOGGED OUT")
+    
   }
 
   const {portfolioData} = useSelector((state)=> state.root)
@@ -63,7 +66,7 @@ const Admin = () => {
         <div className="mt-5 p-5">
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
         </div>   
-         <button className='bg-red-500 px-3 py-1 text-white font-semibold ' onClick={handleLogOut}>LOGOUT</button>    
+         <button className='bg-red-500 px-3 py-1 text-white ms-10 font-semibold ' onClick={handleLogOut}>LOGOUT</button>    
     </div>
   )
 }
