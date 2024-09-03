@@ -57,38 +57,46 @@ app.get("/",(req,res)=>{
    
 })
 
-
-app.post("/api/admin",async(req,res)=>{
+app.post("/admin/send-email",async(req,res)=>{
+  
   try {
-    const {email,password} = req.body;
-    if(!req.body){
-      res.status(204).send("No Contentt")
-    }
-    let user = await Admin.findOne({email});
-    if (!user) {
-      success = false
-      return res.status(400).json({ success, error: "Please try to login with correct credentials (email)" });
-    }   
     
-    const passwordCompare = password === user.password
-    if(!passwordCompare){
-        success = false
-      return res.status(400).json({ success, error: "Please try to login with correct credentials (password)" });
-    }
+  const {  email, message } = req.body;
+  console.log(req.body)
+  // Create a transporter object using SMTP transport
+  const transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+          user: process.env.email, // Replace with your email
+          pass: process.env.Password,  // Replace with your email password
+      },
+  });
 
-    const data = {
-        user: {
-          id: user.id
-        }
+  console.log(process.env.email)
+  // Mail options
+  const mailOptions = {
+      from: email,
+      to: "gargaditya880@gmail.com", // Replace with recipient's email
+      subject: `Message from ${email} from Portfolio`,
+      text: message,
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          // return res.status(500).json({ error: 'Failed to send email' });
+          console.log(error)
       }
-      const authtoken = jwt.sign(data, 'secrem_admin1');
-      success = true;        
-      res.status(200).json({ success, authtoken })
+      else{
+        console.log(info.response)
+        res.status(200).json({ success: 'Email sent successfully' });
+      }
+  });
   } catch (error) {
     console.log(error)
-    res.status(500).json("Internal Server Error")
   }
-})
+});
+
 
 
 
