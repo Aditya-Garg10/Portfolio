@@ -26,7 +26,7 @@ const Login = () => {
     const response = await fetch(`${HOST}/api/admin`,{
       method: "GET",
       headers:{
-        Accept : 'application/json',
+        Accept : '*/*',
         'Content-Type' : 'application/json',
       },
       body : JSON.stringify(data),
