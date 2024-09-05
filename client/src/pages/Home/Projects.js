@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
+import {Link} from 'react-router-dom'
 
 const Projects = () => {
 const textRef = useRef()
@@ -56,7 +57,7 @@ const textRef = useRef()
         <h1 className="text-blue-500 hey1 text-2xl">{project[selectedItemIndex].title}</h1>        
         <p className='text-white hey'>{project[selectedItemIndex].description}</p>
         <p className='text-white hey2'>{project[selectedItemIndex].description2}</p>
-        <p className='text-secondary hey2'>{project[selectedItemIndex].link}</p>
+        <Link to={project[selectedItemIndex].link} className='text-secondary hey2'>{project[selectedItemIndex].link}</Link>
         </div>
        </div>
        
