@@ -51,12 +51,12 @@ const textRef = useRef()
 
        <div  className='flex items-center   justify-center gap-10 sm:flex-col '>
 
-        <img src={project[selectedItemIndex].image}  className='h-60 img1 w-72' alt="" />
+        <img src={project[selectedItemIndex].image}  className='h-60 object-contain img1 w-72' alt="" />
        <div className='flex flex-col gap-5'>
         <h1 className="text-blue-500 hey1 text-2xl">{project[selectedItemIndex].title}</h1>        
         <p className='text-white hey'>{project[selectedItemIndex].description}</p>
         <p className='text-white hey2'>{project[selectedItemIndex].description2}</p>
-        <a href={project[selectedItemIndex].link} className='text-secondary text-wrap hey2'>{project[selectedItemIndex].link}</a>
+        <a href={project[selectedItemIndex].link} className='text-secondary  text-wrap hey2'>{project[selectedItemIndex].link}</a>
         </div>
        </div>
        
