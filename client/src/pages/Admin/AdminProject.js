@@ -2,6 +2,7 @@ import {  Form, Input, Modal, message } from "antd";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ShowLoading, HideLoading, ReloadData } from "../../redux/rootSlice";
+import { HOST } from "../../App";
 
 
 const AdminProject = () => {
@@ -20,7 +21,7 @@ const AdminProject = () => {
       dispatch(ShowLoading());
       let response;
       if (selectedItemForEdit) {
-        response = await fetch("http://localhost:8000/api/portfolio/updateProject", {
+        response = await fetch(`${HOST}/api/portfolio/updateProject`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -28,7 +29,7 @@ const AdminProject = () => {
           body: JSON.stringify({ _id: selectedItemForEdit._id, ...values }),
         });                
       } else {
-        response = await fetch("http://localhost:8000/api/portfolio/addProject", {
+        response = await fetch(`${HOST}/api/portfolio/addProject`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +59,7 @@ const AdminProject = () => {
     try {
       
       dispatch(ShowLoading());
-      const response = await fetch(`http://localhost:8000/api/portfolio/deleteProject/${item._id}`, {
+      const response = await fetch(`${HOST}/api/portfolio/deleteProject/${item._id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

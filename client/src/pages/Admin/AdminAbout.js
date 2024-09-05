@@ -3,6 +3,7 @@ import TextArea from "antd/es/input/TextArea";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ShowLoading, HideLoading } from "../../redux/rootSlice";
+import { HOST } from "../../App";
 
 const AdminAbout = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const AdminAbout = () => {
       values.skills = tempSkills
       dispatch(ShowLoading());
       const response = await fetch(
-        "http://localhost:8000/api/portfolio/updateAbout",
+        `${HOST}/api/portfolio/updateAbout`,
         { method: "PUT",
         headers:{
           "Content-Type": "application/json",

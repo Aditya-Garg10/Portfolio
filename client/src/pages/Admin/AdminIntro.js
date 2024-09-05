@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ShowLoading, HideLoading } from "../../redux/rootSlice";
 
 const AdminIntro = () => {
+  const HOST = "https://portfolio-w0sm.onrender.com"
   const dispatch = useDispatch();
 
   const { portfolioData } = useSelector((state) => state.root);
@@ -13,7 +14,7 @@ const AdminIntro = () => {
     try {    
       dispatch(ShowLoading());
       const response = await fetch(
-        "http://localhost:8000/api/portfolio/updateIntro",
+        `${HOST}/api/portfolio/updateIntro`,
         { method: "PUT",
         headers:{
           "Content-Type": "application/json",
