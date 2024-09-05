@@ -1,7 +1,8 @@
 import React, {  useLayoutEffect, useRef } from "react";
 import SectionTitle from "../../components/SectionTitle";
 import { useSelector } from "react-redux";
-
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import gsap from 'gsap';
 import Photo from '../../assets/myPhoto.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
