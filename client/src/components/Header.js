@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { IoCloseSharp } from 'react-icons/io5'
 import { IoMdArrowRoundDown } from 'react-icons/io'
-import Image from '../assets/image.png'
+import Image from '../assets/FinlResume.png'
 
 gsap.registerPlugin(ScrollToPlugin);
 

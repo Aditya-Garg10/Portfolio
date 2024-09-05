@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Smile from '../../assets/smile2.png'
-import Image from '../../assets/image.png'
+import Image from '../../assets/FinlResume.png'
 import { IoCloseSharp } from 'react-icons/io5'
 import { IoMdArrowRoundDown } from 'react-icons/io'
 import { FaUserLarge } from "react-icons/fa6";
