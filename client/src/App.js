@@ -10,7 +10,7 @@ import Login from './pages/Admin/login.js';
 
 
 
-export const HOST = "https://portfolio-w0sm.onrender.com"
+export const HOST = "https://portfolio-kn2j.vercel.app"
 
 const App = () => {
 
