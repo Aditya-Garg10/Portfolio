@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ShowLoading, HideLoading } from "../../redux/rootSlice";
 
 const AdminIntro = () => {
-  const HOST = "https://portfolio-w0sm.onrender.com"
+  const HOST = "https://portfolio-kn2j.vercel.app"
   const dispatch = useDispatch();
 
   const { portfolioData } = useSelector((state) => state.root);
